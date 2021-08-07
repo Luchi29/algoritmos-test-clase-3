@@ -3,7 +3,10 @@ package com.redbee.academy.clase3;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.List;
+
+import static com.redbee.academy.clase3.Dolar.resolver;
 
 public class DolarTests {
 
@@ -11,8 +14,8 @@ public class DolarTests {
     void testDolar() {
         Assertions.assertEquals(
                 3.34F,
-                Dolar.resolver(
-                        List.of(
+                resolver(
+                        Arrays.asList(
                                 496.96F,
                                 499.03F,
                                 496.03F,

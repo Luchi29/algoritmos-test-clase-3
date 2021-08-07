@@ -1,5 +1,7 @@
 package com.redbee.academy.clase3;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Dolar {
@@ -29,7 +31,18 @@ public class Dolar {
      * @return
      */
     public static Float resolver(List<Float> historicoDolar) {
-        //TODO: implementar
-        return null;
+
+        ArrayList<Float> diferencias = new ArrayList<>();
+        Float diferenciaMayor = historicoDolar.get(0);
+        for(Integer i = 1; i < historicoDolar.size(); i++) {
+            diferenciaMayor -= historicoDolar.get(i);
+            diferencias.add(diferenciaMayor);
+            diferenciaMayor = historicoDolar.get(i);
+        }
+
+        Float diferenciaFinal = Math.abs(Collections.min(diferencias));
+        diferenciaFinal = Math.round(diferenciaFinal*100)/100F;
+
+        return diferenciaFinal;
     }
 }
